@@ -6,17 +6,17 @@
 ^-  agent:gall
 |_  bol=bowl:gall
 +*  this       .
-    %APPNAME%-core  +>
-    cc         ~(. %APPNAME%-core bol)
+    todolist-core  +>
+    cc         ~(. todolist-core bol)
     def        ~(. (default-agent this %|) bol)
 ::
 ++  on-init
   ^-  (quip card _this)
-  =/  launcha  [%launch-action !>([%add %%APPNAME% [[%basic '%APPNAME%' '' '/~%APPNAME%'] %.y]])]
-  =/  filea  [%file-server-action !>([%serve-dir /'~%APPNAME%' /app/%APPNAME% %.n])]
+  =/  launcha  [%launch-action !>([%add %todolist [[%basic 'todolist' '' '/~todolist'] %.y]])]
+  =/  filea  [%file-server-action !>([%serve-dir /'~todolist' /app/todolist %.n])]
   :_  this
   :~  [%pass /srv %agent [our.bol %file-server] %poke filea]
-      [%pass /%APPNAME% %agent [our.bol %launch] %poke launcha]
+      [%pass /todolist %agent [our.bol %launch] %poke launcha]
       ==
 ::
 ++  on-watch

@@ -29,7 +29,7 @@ gulp.task('css-bundle', function() {
     .src('src/index.css')
     .pipe(cssimport())
     .pipe(postcss(plugins))
-    .pipe(gulp.dest('./urbit/app/%APPNAME%/css'));
+    .pipe(gulp.dest('./urbit/app/todolist/css'));
 });
 
 gulp.task('jsx-transform', function(cb) {
@@ -63,14 +63,14 @@ gulp.task('js-imports', function(cb) {
       console.log(e);
       cb();
     })
-    .pipe(gulp.dest('./urbit/app/%APPNAME%/js/'))
+    .pipe(gulp.dest('./urbit/app/todolist/js/'))
     .on('end', cb);
 });
 
 gulp.task('js-minify', function () {
-  return gulp.src('./urbit/app/%APPNAME%/js/index.js')
+  return gulp.src('./urbit/app/todolist/js/index.js')
     .pipe(minify())
-    .pipe(gulp.dest('./urbit/app/%APPNAME%/js/'));
+    .pipe(gulp.dest('./urbit/app/todolist/js/'));
 });
 
 gulp.task('urbit-copy', function () {

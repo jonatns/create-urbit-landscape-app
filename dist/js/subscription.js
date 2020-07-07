@@ -12,14 +12,14 @@ export class Subscription {
   //
   start() {
     if (api.authTokens) {
-      // this.initialize%APPNAME%();
+      // this.initializetodolist();
     } else {
       console.error("~~~ ERROR: Must set api.authTokens before operation ~~~");
     }
   }
 
-  // initialize%APPNAME%() {
-  //   api.bind('/', 'PUT', api.authTokens.ship, '%APPNAME%',
+  // initializetodolist() {
+  //   api.bind('/', 'PUT', api.authTokens.ship, 'todolist',
   //     this.handleEvent.bind(this),
   //     this.handleError.bind(this));
   // }
@@ -30,7 +30,7 @@ export class Subscription {
 
   handleError(err) {
     console.error(err);
-    api.bind('/', 'PUT', api.authTokens.ship, '%APPNAME%',
+    api.bind('/', 'PUT', api.authTokens.ship, 'todolist',
       this.handleEvent.bind(this),
       this.handleError.bind(this));
   }
