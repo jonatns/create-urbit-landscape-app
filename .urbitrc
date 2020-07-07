@@ -1,5 +1,5 @@
 module.exports = {
   URBIT_PIERS: [
-    "~/urbit-v0.10.7-linux64/mipnus-mortem/home",
+    "../home",
   ]
 };
